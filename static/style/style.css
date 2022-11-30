@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "SpotifyFont";
+    src: url("./../../font/GothamMedium.ttf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #242424;
+}
+
+/* ==== Title Name ==== */
+.nameArea {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.name {
+    color: white;
+    font-size: 35px;
+    font-family: 'SpotifyFont';
+}
+
+/* ==== Portfolio Name ==== */
+.portfolioArea {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+}
+
+.portfolio {
+    color: white;
+    font-size: 25px;
+    font-family: 'SpotifyFont';
+}
