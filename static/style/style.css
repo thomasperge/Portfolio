@@ -3,10 +3,27 @@
     src: url("./../../font/GothamMedium.ttf");
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+}
+
+.windowsArea {
+    width: 100%;
+    height: 100%;
     background-color: #242424;
+}
+
+.firstView {
+    /* width: 100vw; */
+    width: 100%;
+    height: 100vh;
 }
 
 /* ==== Title Name ==== */
@@ -16,17 +33,18 @@ body {
     height: auto;
     justify-content: center;
     align-items: center;
-    margin-top: 20vh;
+    padding-top: 12%;
 }
 
 .name {
     color: white;
-    font-size: 35px;
+    font-size: 4vw;
     font-family: 'SpotifyFont';
+    font-weight: bold;
 }
 
-/* ==== Portfolio Name ==== */
-.portfolioArea {
+/* ==== Developper Name ==== */
+.developperArea {
     display: flex;
     width: 100%;
     height: auto;
@@ -35,8 +53,235 @@ body {
     margin-top: 1vh;
 }
 
-.portfolio {
+.developper {
     color: white;
-    font-size: 25px;
+    font-size: 2vw;
     font-family: 'SpotifyFont';
+}
+
+/* ==== Link Area ==== */
+.linkArea {
+    display: flex;
+    width: 100%;
+    height: 25%;
+    justify-content: center;
+    align-items: center;
+}
+
+.greenBackground {
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: limegreen;
+    border-radius: 6px;
+    padding: 5px 9px 5px 9px;
+}
+
+.availableText {
+    color: white;
+    font-size: 0.8vw;
+    font-family: 'SpotifyFont';
+    font-weight: bold;
+}
+
+.githubText {
+    color: white;
+    font-size: 1.9vw;
+    font-family: 'SpotifyFont';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.discordArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: auto;
+    margin: 0 2% 0 2%;
+}
+
+.popupDiscord {
+    display: block;
+    position: absolute;
+    color: white;
+    margin-bottom: 6%;
+    font-family: 'SpotifyFont';
+    font-weight: bold;
+    background-color: #522ba7;
+    padding: 4px 8px 4px 8px;
+    border-radius: 8px;
+}
+
+.discordImage {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.linkedinImage {
+    width: 2.3%;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.space-flex {
+    margin-left: 4.5%;
+    margin-right: 4.5%;
+}
+
+/* ==== Portfolio ==== */
+.portfolioArea {
+    width: 100%;
+    height: auto;
+}
+
+.portfolioNameArea {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0 4.5% 0;
+    color: white;
+    font-size: 3.2vw;
+    font-family: 'SpotifyFont';
+    font-weight: bold;
+}
+
+/* ==== Project ==== */
+.projectArea {
+    display: flex;
+    width: auto;
+    height: auto;
+    padding: 2% 14% 2% 14%;
+}
+
+.textAreaProject {
+    width: 50%;
+    height: auto;
+    padding: 0 4% 0 0;
+}
+
+.imageAreaProject {
+    display: flex;
+    width: 50%;
+    height: auto;
+    align-items: center;
+}
+
+.projectTitle {
+    color: white;
+    font-size: 2.5vw;
+    font-family: 'SpotifyFont';
+    font-weight: bold;
+}
+
+.projectDescription {
+    color: white;
+    font-size: 1.4vw;
+    font-family: 'SpotifyFont';
+    margin-top: 6.5%;
+}
+
+.imageProjectTwice {
+    width: 50%;
+    height: auto;
+}
+
+.imageProjectAlone {
+    width: 100%;
+    height: auto;
+}
+
+/* ==== Tags ==== */
+.tagsArea {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    margin-top: 5.5%;
+}
+
+.tagsTitle {
+    color: white;
+    font-size: 1.4vw;
+    font-family: 'SpotifyFont';
+    margin-right: 1%;
+}
+
+.tags {
+    display: flex;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5% 1.5% 0.5% 1.5%;
+    margin: 0 1% 0 1%;
+    color: white;
+    font-size: 1.15vw;
+    font-family: 'SpotifyFont';
+    border-radius: 20px;
+    background-color: #c00;
+    margin-bottom: 2%;
+}
+
+/* ==== Dark Mode ==== */
+.darkmodeArea {
+    display: flex;
+    width: 100%;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0 15px 0;
+}
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 4em;
+    height: 2em;
+    transform: scale(0.8);
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    --background: black;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 11%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--background);
+    transition: .5s;
+}
+
+input:checked + .slider {
+    background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+    transform: translateX(130%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
 }
