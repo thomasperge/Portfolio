@@ -9,7 +9,7 @@ var discordPopUpBoolean = true
 
 function setLightMode() {
     // Light Mode
-    windowsArea.style.backgroundColor = "white"
+    windowsArea.style.backgroundColor = "#edeceb"
     document.getElementById("name").style.color = "#242424"
     document.getElementById("developper").style.color = "#242424"
     document.getElementById("githubText").style.color = "#242424"
