@@ -1,94 +1,47 @@
-var test = document.getElementById("checkboxMode")
+var mode = document.getElementById("checkboxMode")
 var windowsArea = document.getElementById("windowsArea")
 var discordImage = document.getElementById('discordImage')
 var githubText = document.getElementById('githubText')
 var discordPopUp = document.getElementById('popupDiscord')
 
-var darkMode = true
 var discordPopUpBoolean = true
 
-function setLightMode() {
-    // Light Mode
-    windowsArea.style.backgroundColor = "#edeceb"
-    document.getElementById("name").style.color = "#242424"
-    document.getElementById("developper").style.color = "#242424"
-    document.getElementById("githubText").style.color = "#242424"
-    document.getElementById("portfolioNameArea").style.color = "#242424"
-
-    const projectTitle = document.querySelectorAll('.projectTitle')
-    for (let i = 0; i <= projectTitle.length -1; i++) {
-        projectTitle[i].style.color = "#242424"
+mode.addEventListener('click', () => {
+    // Change body class
+    if (document.body.classList.contains('dark')) {
+        document.body.remove('dark')
+        document.body.add('light')
+    } else if (document.body.classList.contains('light')){
+        document.body.remove('light')
+        document.body.add('dark')
     }
 
-    const projectDesc = document.querySelectorAll('.projectDescription')
-    for (let i = 0; i <= projectDesc.length -1; i++) {
-        projectDesc[i].style.color = "#242424"
-    }
-
-    const projectTaskTitle = document.querySelectorAll('.tagsTitle')
-    for (let i = 0; i <= projectTaskTitle.length -1; i++) {
-        projectTaskTitle[i].style.color = "#242424"
-    }
-
-    document.getElementById("linkedinImage").style.filter = "invert(0)"
-}
-
-function setDarkMode() {
-    // Dark mode
-    windowsArea.style.backgroundColor = "#242424"
-    document.getElementById("name").style.color = "white"
-    document.getElementById("developper").style.color = "white"
-    document.getElementById("githubText").style.color = "white"
-    document.getElementById("portfolioNameArea").style.color = "white"
-
-    const projectTitle = document.querySelectorAll('.projectTitle')
-    for (let i = 0; i <= projectTitle.length -1; i++) {
-        projectTitle[i].style.color = "white"
-    }
-
-    const projectDesc = document.querySelectorAll('.projectDescription')
-    for (let i = 0; i <= projectDesc.length -1; i++) {
-        projectDesc[i].style.color = "white"
-    }
-
-    const projectTaskTitle = document.querySelectorAll('.tagsTitle')
-    for (let i = 0; i <= projectTaskTitle.length -1; i++) {
-        projectTaskTitle[i].style.color = "white"
-    }
-
-    document.getElementById("linkedinImage").style.filter = "invert(1)"
-}
-
-
-test.addEventListener('click', function() {
-    const cookieObj = new URLSearchParams(document.cookie.replaceAll("&", "%26").replaceAll("; ","&"))
-    if (cookieObj.get("mode") == "dark") {
+    // Change coockie
+    if (document.body.classList.contains('dark')) {
         document.cookie = "mode=light"
-        setLightMode()
     } else {
         document.cookie = "mode=dark"
-        setDarkMode()
     }
-
-    console.log(cookieObj.get("mode"));
 })
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const cookieObj = new URLSearchParams(document.cookie.replaceAll("&", "%26").replaceAll("; ","&"))
+
     if (cookieObj.get("mode") == "dark") {
-        setDarkMode()
+        document.body.remove('light')
+        document.body.add('dark')
     } else {
-        setLightMode()
-        test.checked = true
+        document.body.remove('dark')
+        document.body.add('light')
     }
 });
 
 
-githubText.addEventListener('click', e => {
+githubText.addEventListener('click', () => {
     window.open("https://github.com/thomasperge", '_blank');
 })
 
-discordImage.addEventListener('click', e =>  {
+discordImage.addEventListener('click', () =>  {
     if (discordPopUpBoolean) {
         discordPopUp.style.display = "block"
         discordPopUpBoolean = false

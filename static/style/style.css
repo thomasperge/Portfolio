@@ -3,6 +3,11 @@
     src: url("./../../font/GothamMedium.ttf");
 }
 
+:root {
+    --colorMode: white;
+    --backgroundColor: #242424
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -17,7 +22,7 @@ body {
 .windowsArea {
     width: 100%;
     height: 100%;
-    background-color: #242424;
+    background-color: var(--backgroundColor)
 }
 
 .firstView {
